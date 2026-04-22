@@ -1,0 +1,125 @@
+\documentclass[12pt, letterpaper]{article}
+
+% --- Packages ---
+\usepackage[margin=0.75in, top=0.7in, bottom=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+
+% --- Hyperlink styling ---
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+}
+
+% --- Section formatting ---
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{3pt}
+
+% --- List formatting ---
+\setlist[itemize]{leftmargin=1.5em, itemsep=1pt, topsep=2pt, parsep=0pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+\begin{document}
+
+% --- Header ---
+\begin{center}
+  {\LARGE \textbf{Kellen J. Murphy, Ph.D.}} \\[6pt]
+  Athens, OH 45701 \quad +1 (614) 563-9034 \quad
+  \href{mailto:me@kellenmurphy.com}{me@kellenmurphy.com} \\[2pt]
+  \href{https://kellenmurphy.com}{kellenmurphy.com} \quad
+  \href{https://linkedin.com/in/kellenmurphy}{linkedin.com/in/kellenmurphy} \quad
+  \href{https://github.com/kellenmurphy}{github.com/kellenmurphy}
+\end{center}
+
+\vspace{4pt}
+
+% --- Profile ---
+\section{Profile}
+
+Identity Architect and IAM subject matter expert with over a decade of experience designing and operating enterprise-grade identity infrastructure for higher education and beyond. Currently focused on the strategic and technical evolution of identity services at the University of Virginia --- from Shibboleth and Grouper operations to privileged access management and OIDC/SAML integrations. Equally comfortable shaping long-term identity strategy and diving deep into complex federation and integration challenges.
+
+% --- Experience ---
+\section{Experience}
+
+\textbf{Identity Architect} \hfill \textbf{2022 -- Present} \\
+\textit{University of Virginia, Identity Services}
+\begin{itemize}
+  \item Serve as the institutional subject matter expert for all authentication and authorization technologies, advising on SSO integrations, identity strategy, and complex architectural challenges across the university.
+  \item Led the enterprise rollout of Internet2 Grouper, establishing it as the central platform for group and access management across UVA; deployed and operates in a fully containerized Docker Swarm environment.
+  \item Hold significant operational responsibility for UVA's Shibboleth-based (NetBadge) identity provider infrastructure, ensuring reliability and continuity for the institution's primary SSO environment.
+  \item Served as senior engineer on the University's Privileged Access Management (PAM) deployment.
+  \item Led the implementation of Keycloak in two distinct capacities: as an OIDC-SAML authentication proxy for high-security network zones, and as a complete guest access solution for the University's Student Information System.
+  \item Play a critical role in shaping and advancing dev/ops practices for the Identity Services team, bridging the gap between infrastructure operations and software development.
+  \item Provide day-to-day guidance on SAML, OIDC, and broader IAM integrations for university stakeholders, from troubleshooting complex federation issues to shaping long-term identity strategy.
+\end{itemize}
+
+\vspace{2pt}
+
+\textbf{Lead IAM Consultant \& Software Engineer} \hfill \textbf{2016 -- 2022} \\
+\textit{IDM Engineering}
+\begin{itemize}
+  \item Served as lead engineer for all identity projects since 2018, owning the full project lifecycle: scoping, quoting, sales engineering, implementation, documentation, and project management.
+  \item Designed, customized, and implemented SAML-based SSO solutions --- including Shibboleth IDP/SP, AD FS, SimpleSAMLphp, WSO2 Identity Server, Keycloak, and OneLogin --- tailored to each client's environment and requirements.
+  \item Provided ongoing integration support, day-to-day administration, and managed services for Shibboleth IDP-based SSO environments at multiple R1 and R2 research universities.
+  \item Consistently delivered identity management projects on time and within budget with a strong track record of client satisfaction.
+\end{itemize}
+
+\vspace{2pt}
+
+\textbf{Software Engineer} \hfill \textbf{2016 -- 2022} \\
+\textit{BCS Engineering (sister company to IDM Engineering)}
+\begin{itemize}
+  \item Developed custom e-commerce solutions including Xcart and Magento module development, front-end web design, and WordPress plugin development.
+\end{itemize}
+
+\vspace{2pt}
+
+\textbf{Founder} \hfill \textbf{2014 -- 2016} \\
+\textit{Cardinal Computing Consultants}
+\begin{itemize}
+  \item Founded and operated an independent consultancy providing data science services to customers nationwide and managed IT support for small businesses in southeast Ohio.
+\end{itemize}
+
+% --- Technical Skills ---
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0em, label={}]
+  \item \textbf{Single Sign On (SSO) Solutions:} Shibboleth (IDP \& SP), AD FS, SimpleSAMLphp, WSO2 Identity Server, and Keycloak
+  \item \textbf{IDaaS \& Cloud Identity:} OneLogin, Okta, Azure AD (Microsoft Entra), and PingFederate
+  \item \textbf{Protocols \& Standards:} SAML 2.0, OAuth 2.0, OIDC, SCIM, LTI, LDAP, PKI, Multilateral Federation
+  \item \textbf{Development:} Python (10 years), PHP (7 years), Java (5 years), Groovy (3 years), Perl, C++
+  \item \textbf{Infrastructure \& DevOps:} RHEL/Linux server administration, Apache, Nginx, Git, SVN, WSL, SQL, Docker Swarm
+\end{itemize}
+
+% --- Community Involvement ---
+\section{Community Involvement}
+
+Actively engaged in the higher education Trust \& Identity (T\&I) community through InCommon and Internet2. Current member of the InCommon Technical Advisory Committee (TAC, term through 2028) and active participant in several working groups: the Software Integration Working Group (SIWG), the Relying Party Onboarding \& Discovery Working Group (RPDOWG), and the SIRTFI Exercise Planning Working Group (SEPWG). Presented at the last three Internet2 Technology Exchange conferences, and a two-time presenter and planning committee member for Internet2 BaseCamp.
+
+% --- Communication & Leadership ---
+\section{Communication \& Leadership}
+
+A distinguishing strength is the ability to pair deep technical expertise with a naturally honed talent for making complex concepts accessible. Whether advising stakeholders on identity architecture, mentoring colleagues on federation standards, or guiding clients through unfamiliar technology, the goal is always the same: leave people more capable and confident than before. This education-first approach, combined with strong organizational skills and a collaborative instinct, makes for an effective partner at every level of an organization.
+
+% --- Education ---
+\section{Education}
+
+\textbf{Ph.D., Physics} (Computational Cosmology) \hfill December 2013 \\
+Ohio University \\[4pt]
+\textbf{M.S., Physics} (Theoretical Nuclear Physics) \hfill June 2008 \\
+Ohio University \\[4pt]
+\textbf{B.S., Mathematics \& Physics} \hfill June 2006 \\
+Otterbein University
+
+\vspace{8pt}
+\begin{center}
+\textit{References available upon request.}
+\end{center}
+
+\end{document}
