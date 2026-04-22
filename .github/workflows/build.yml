@@ -1,0 +1,35 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume
+          path: resume.pdf
+
+      - name: Push PDF to kellenmurphy.github.io
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git clone https://x-access-token:${GH_PAT}@github.com/kellenmurphy/kellenmurphy.github.io.git gh-pages
+          cp resume.pdf gh-pages/resume.pdf
+          cd gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add resume.pdf
+          git diff --cached --quiet || git commit -m "Update resume.pdf"
+          git push
