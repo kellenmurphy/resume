@@ -1,0 +1,100 @@
+\documentclass[12pt, letterpaper]{article}
+
+% --- Packages ---
+\usepackage[margin=0.75in, top=0.7in, bottom=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage[expansion=false]{microtype}
+
+% --- Hyperlink styling ---
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+}
+
+% --- Section formatting ---
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{3pt}
+
+% --- List formatting ---
+\setlist[itemize]{leftmargin=1.5em, itemsep=1pt, topsep=2pt, parsep=0pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+\begin{document}
+
+% --- Header ---
+\begin{center}
+  {\LARGE \textbf{<< name | tex >>}} \\[6pt]
+  << contact.location | tex >> << contact.zip >> \quad << contact.phone >> \quad
+  \href{mailto:<< contact.email >>}{<< contact.email >>} \\[2pt]
+<% for link in contact.links %>
+  \href{https://<< link >>}{<< link >>}<% if not loop.last %> \quad<% endif +%>
+<% endfor %>
+\end{center}
+
+\vspace{4pt}
+
+% --- Profile ---
+\section{Profile}
+
+<< profile | tex >>
+
+% --- Experience ---
+\section{Experience}
+
+<% for job in experience %>
+\textbf{<< job.role | tex >>} \hfill \textbf{<< job.start >> -- << job.end >>} \\
+\textit{<< job.org | tex >>}
+\begin{itemize}
+<% for bullet in job.bullets %>
+  \item << bullet | tex >>
+<% endfor %>
+\end{itemize}
+<% if not loop.last %>
+
+\vspace{2pt}
+
+<% endif %>
+<% endfor %>
+
+% --- Technical Skills ---
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0em, label={}]
+<% for skill in skills %>
+  \item \textbf{<< skill.label | tex >>:} << skill.detail | tex >>
+<% endfor %>
+\end{itemize}
+
+% --- Community Involvement ---
+\section{<< community.title | tex >>}
+
+<< community.text | tex >>
+
+% --- Communication & Leadership ---
+\section{<< leadership.title | tex >>}
+
+<< leadership.text | tex >>
+
+% --- Certifications ---
+\section{Certifications}
+
+<% for cert in certifications %>
+\textbf{<< cert.name | tex >>} \hfill \textbf{<< cert.date >>} \\
+\textit{<< cert.org | tex >>} \quad \href{<< cert.url >>}{<< cert.url | bare >>}
+<% endfor %>
+
+% --- Education ---
+\section{Education}
+
+<% for entry in education %>
+\textbf{<< entry.degree | tex >>}<% if entry.focus %> (<< entry.focus | tex >>)<% endif %> \hfill << entry.date >> \\
+<< entry.school | tex >><% if not loop.last %> \\[4pt]<% endif +%>
+<% endfor %>
+
+\end{document}

@@ -1,0 +1,95 @@
+---
+layout: default
+title: "{{ meta.title }}"
+description: "{{ meta.description }}"
+markdown_url: /resume.md
+last_modified_at: {{ date }}
+---
+
+<div class="resume">
+
+  <div class="resume-masthead position-relative text-center mb-1">
+    <h1 class="resume-name">{{ name | h }}</h1>
+    <p class="resume-contact">
+      {{ contact.location | h }} &nbsp;&middot;&nbsp; {{ contact.phone | h }} &nbsp;&middot;&nbsp; <a href="mailto:{{ contact.email }}">{{ contact.email }}</a><br>
+{% for link in contact.links %}
+      <a href="https://{{ link }}">{{ link }}</a>{% if not loop.last %} &nbsp;&middot;&nbsp;{% endif +%}
+{% endfor %}
+    </p>
+    <a href="/resume.pdf" class="btn btn-sm resume-pdf-btn position-absolute top-0 end-0">&#8595; PDF</a>
+  </div>
+
+  <section>
+    <h2 class="resume-section">Profile</h2>
+    <p>
+      {{ profile | h }}
+    </p>
+  </section>
+
+  <section>
+    <h2 class="resume-section">Experience</h2>
+{% for job in experience %}
+
+    <div class="resume-job-header">
+      <span class="resume-jobtitle">{{ job.role | h }}</span>
+      <span class="resume-date">{{ job.start }} &ndash; {{ job.end }}</span>
+    </div>
+    <div class="resume-org">{{ job.org | h }}</div>
+    <ul>
+{% for bullet in job.bullets %}
+      <li>{{ bullet | h }}</li>
+{% endfor %}
+    </ul>
+{% endfor %}
+  </section>
+
+  <section>
+    <h2 class="resume-section">Technical Skills</h2>
+    <ul class="resume-skills">
+{% for skill in skills %}
+      <li><strong>{{ skill.label | h }}:</strong> {{ skill.detail | h }}</li>
+{% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="resume-section">{{ community.title | h }}</h2>
+    <p>
+      {{ community.text | h }}
+    </p>
+  </section>
+
+  <section>
+    <h2 class="resume-section">{{ leadership.title | h }}</h2>
+    <p>
+      {{ leadership.text | h }}
+    </p>
+  </section>
+
+  <section>
+    <h2 class="resume-section">Certifications</h2>
+{% for cert in certifications %}
+    <div class="resume-job-header">
+      <span class="resume-jobtitle"><a href="{{ cert.url }}">{{ cert.name | h }}</a></span>
+      <span class="resume-date">{{ cert.date }}</span>
+    </div>
+    <div class="resume-org">{{ cert.org | h }}</div>
+{% endfor %}
+  </section>
+
+  <section>
+    <h2 class="resume-section">Education</h2>
+{% for entry in education %}
+    <div class="resume-job-header{% if not loop.first %} mt-2{% endif %}">
+      <span class="resume-jobtitle">{{ entry.degree | h }}</span>
+      <span class="resume-date">{{ entry.date }}</span>
+    </div>
+    <div class="resume-org">{{ entry.school | h }}{% if entry.focus %} &mdash; {{ entry.focus | h }}{% endif %}</div>
+{% if not loop.last %}
+
+{% endif %}
+{% endfor %}
+  </section>
+
+
+</div>

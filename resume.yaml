@@ -1,0 +1,167 @@
+# Canonical resume data.
+# Every published format — PDF (via LaTeX), HTML (kellenmurphy.com/resume.html),
+# and Markdown (kellenmurphy.com/resume.md) — is generated from this file by
+# scripts/build.py. Edit here; never edit the generated outputs.
+
+name: Kellen J. Murphy, Ph.D.
+
+contact:
+  location: Athens, OH
+  zip: "45701" # shown only on the PDF
+  phone: +1 (614) 563-9034
+  email: me@kellenmurphy.com
+  links:
+    - kellenmurphy.com
+    - linkedin.com/in/kellenmurphy
+    - github.com/kellenmurphy
+
+# Front matter for the HTML page on kellenmurphy.com
+meta:
+  title: Resumé
+  description: >-
+    Résumé of Kellen Murphy — Identity Architect and SSO Subject Matter Expert
+    at the University of Virginia, with expertise in SAML, OpenID Connect,
+    Shibboleth, and enterprise IAM.
+
+profile: >-
+  Identity Architect and IAM subject matter expert with over a decade of
+  experience designing and operating enterprise-grade identity infrastructure
+  for higher education and beyond. Currently focused on the strategic and
+  technical evolution of identity services at the University of Virginia —
+  from Shibboleth and Grouper operations to privileged access management and
+  OIDC/SAML integrations. Equally comfortable shaping long-term identity
+  strategy and diving deep into complex federation and integration challenges.
+
+experience:
+  - role: Identity Architect
+    org: University of Virginia, Identity Services
+    start: "2022"
+    end: Present
+    bullets:
+      - >-
+        Serve as the institutional subject matter expert for all
+        authentication and authorization technologies, advising on SSO
+        integrations, identity strategy, and complex architectural challenges
+        across the university.
+      - >-
+        Led the enterprise rollout of Internet2 Grouper, establishing it as
+        the central platform for group and access management across UVA;
+        deployed and operates in a fully containerized Docker Swarm
+        environment.
+      - >-
+        Holds significant operational responsibility for UVA's
+        Shibboleth-based (NetBadge) identity provider, ensuring reliability
+        and continuity for the institution's primary IdP.
+      - >-
+        Served as senior engineer on the University's Privileged Access
+        Management (PAM) deployment.
+      - >-
+        Led the implementation of Keycloak in two distinct capacities: as an
+        OIDC-SAML authentication proxy for high-security network zones, and
+        as a complete guest access solution for the University's Student
+        Information System.
+      - >-
+        Play a critical role in shaping and advancing dev/ops practices for
+        the Identity Services team, bridging the gap between infrastructure
+        operations and software development.
+      - >-
+        Provide day-to-day guidance on SAML, OIDC, and broader IAM
+        integrations for university stakeholders, from troubleshooting
+        complex federation issues to shaping long-term identity strategy.
+
+  - role: Lead IAM Consultant & Software Engineer
+    org: IDM Engineering
+    start: "2016"
+    end: "2022"
+    bullets:
+      - >-
+        Served as lead engineer for all identity projects since 2018, owning
+        the full project lifecycle: scoping, quoting, sales engineering,
+        implementation, documentation, and project management.
+      - >-
+        Designed, customized, and implemented SAML-based SSO solutions —
+        including Shibboleth IDP/SP, AD FS, SimpleSAMLphp, WSO2 Identity
+        Server, Keycloak, and OneLogin — tailored to each client's
+        environment and requirements.
+      - >-
+        Provided ongoing integration support, day-to-day administration, and
+        managed services for Shibboleth IDP-based SSO environments at
+        multiple R1 and R2 research universities.
+      - >-
+        Consistently delivered identity management projects on time and
+        within budget with a strong track record of client satisfaction.
+
+  - role: Software Engineer
+    org: BCS Engineering (sister company to IDM Engineering)
+    start: "2016"
+    end: "2022"
+    bullets:
+      - >-
+        Developed custom e-commerce solutions including Xcart and Magento
+        module development, front-end web design, and WordPress plugin
+        development.
+
+  - role: Founder
+    org: Cardinal Computing Consultants
+    start: "2014"
+    end: "2016"
+    bullets:
+      - >-
+        Founded and operated an independent consultancy providing data
+        science services to customers nationwide and managed IT support for
+        small businesses in southeast Ohio.
+
+skills:
+  - label: Single Sign On (SSO) Solutions
+    detail: Shibboleth (IDP & SP), AD FS, SimpleSAMLphp, WSO2 Identity Server, and Keycloak
+  - label: IDaaS & Cloud Identity
+    detail: OneLogin, Okta, Microsoft Entra ID, and PingFederate
+  - label: Protocols & Standards
+    detail: SAML 2.0, OAuth 2.0, OIDC, SCIM, LTI, LDAP, PKI, Multilateral Federation
+  - label: Development
+    detail: Python (10 years), PHP (7 years), Java (5 years), Groovy (3 years), Perl, C++
+  - label: Infrastructure & DevOps
+    detail: RHEL/Linux server administration, Apache, Nginx, Git, Bash, Ansible, SQL, Docker Swarm
+
+community:
+  title: Community Involvement
+  text: >-
+    Actively engaged in the higher education Trust & Identity (T&I) community
+    through InCommon and Internet2. Current member of the InCommon Technical
+    Advisory Committee (TAC, term through 2028) and active participant in
+    several working groups: the Software Integration Working Group (SIWG),
+    the Relying Party Onboarding & Discovery Working Group (RPDOWG), and the
+    SIRTFI Exercise Planning Working Group (SEPWG). Presented at the last
+    three Internet2 Technology Exchange conferences, and a two-time presenter
+    and planning committee member for Internet2 BaseCamp.
+
+leadership:
+  title: Communication & Leadership
+  text: >-
+    A distinguishing strength is the ability to pair deep technical expertise
+    with a naturally honed talent for making complex concepts accessible.
+    Whether advising stakeholders on identity architecture, mentoring
+    colleagues on federation standards, or guiding clients through unfamiliar
+    technology, the goal is always the same: leave people more capable and
+    confident than before. This education-first approach, combined with
+    strong organizational skills and a collaborative instinct, makes for an
+    effective partner at every level of an organization.
+
+certifications:
+  - name: Certified Identity Professional (IDPro)
+    org: IDPro
+    date: December 2023
+    url: https://www.credly.com/badges/b6157100-2e86-4bc2-9f02-8e1058d45ef3
+
+education:
+  - degree: Ph.D., Physics
+    focus: Computational Cosmology
+    date: December 2013
+    school: Ohio University
+  - degree: M.S., Physics
+    focus: Theoretical Nuclear Physics
+    date: June 2008
+    school: Ohio University
+  - degree: B.S., Mathematics & Physics
+    date: June 2006
+    school: Otterbein University

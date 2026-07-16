@@ -1,8 +1,9 @@
-name: Build PDF
+name: Build Resume
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -10,26 +11,38 @@ jobs:
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
+      - name: Render LaTeX, HTML, and Markdown from resume.yaml
+        run: |
+          python3 -m pip install --user -r scripts/requirements.txt
+          python3 scripts/build.py --date "$(git log -1 --format=%cs)"
+
       - name: Build PDF
         uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # v4.1.0
         with:
-          root_file: resume.tex
+          root_file: build/resume.tex
+          work_in_root_file_dir: true
 
-      - name: Upload PDF
+      - name: Upload artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: resume
-          path: resume.pdf
+          path: |
+            build/resume.pdf
+            build/resume.tex
+            build/resume.html
+            build/resume.md
 
-      - name: Push PDF to kellenmurphy.github.io
+      - name: Push generated formats to kellenmurphy.com
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git clone https://x-access-token:${GH_PAT}@github.com/kellenmurphy/kellenmurphy.github.io.git gh-pages
-          cp resume.pdf gh-pages/resume.pdf
-          cd gh-pages
+          git clone https://x-access-token:${GH_PAT}@github.com/kellenmurphy/kellenmurphy.com.git site
+          cp build/resume.pdf site/resume.pdf
+          cp build/resume.html site/resume.html
+          cp build/resume.md site/_md_pages/resume.txt
+          cd site
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resume.pdf
-          git diff --cached --quiet || git commit -m "Update resume.pdf (kellenmurphy/resume@$(git -C .. rev-parse --short HEAD))"
+          git add resume.pdf resume.html _md_pages/resume.txt
+          git diff --cached --quiet || git commit -m "Update resume (kellenmurphy/resume@$(git -C .. rev-parse --short HEAD))"
           git push

@@ -1,0 +1,54 @@
+---
+layout: null
+permalink: /resume.md
+---
+# {{ name }}
+
+{{ contact.location }} · {{ contact.phone }} · {{ contact.email }}
+{{ contact.links | join(' · ') }}
+
+## Profile
+
+{{ profile }}
+
+## Experience
+
+{% for job in experience %}
+**{{ job.role }}** — {{ job.start }}–{{ job.end }}
+{{ job.org }}
+
+{% for bullet in job.bullets %}
+- {{ bullet }}
+{% endfor %}
+
+{% endfor %}
+## Technical Skills
+
+{% for skill in skills %}
+- **{{ skill.label }}:** {{ skill.detail }}
+{% endfor %}
+
+## {{ community.title }}
+
+{{ community.text }}
+
+## {{ leadership.title }}
+
+{{ leadership.text }}
+
+## Certifications
+
+{% for cert in certifications %}
+**{{ cert.name }}** — {{ cert.date }}
+{{ cert.org }} · {{ cert.url }}
+{% endfor %}
+
+## Education
+
+{% for entry in education %}
+**{{ entry.degree }}**{% if entry.focus %} ({{ entry.focus }}){% endif %} — {{ entry.date }}
+{{ entry.school }}
+{% if not loop.last %}
+
+{% endif %}
+{% endfor %}
